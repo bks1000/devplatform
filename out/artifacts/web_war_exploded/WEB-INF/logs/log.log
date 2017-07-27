@@ -1,0 +1,103 @@
+[INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/book/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.june.controller.BookController.save(com.june.dto.Book,javax.servlet.http.HttpServletRequest) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/book/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.june.controller.BookController.getBookList(javax.servlet.http.HttpServletRequest) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/book/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.june.controller.BookController.addBook(org.springframework.ui.ModelMap) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/book/update],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.june.controller.BookController.updateBook(javax.servlet.http.HttpServletRequest) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/type/save],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.june.controller.BookTypeController.save(javax.servlet.http.HttpServletRequest) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/type/getbooktypelist],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.june.controller.BookTypeController.getBookTypeList() 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/type/addbooktype],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.june.controller.BookTypeController.addBookType() 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/type/del],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.june.controller.BookTypeController.delBookType(javax.servlet.http.HttpServletRequest) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/type/update],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.june.controller.BookTypeController.updateBookType(javax.servlet.http.HttpServletRequest) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/type/getbooktypepage],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.june.controller.BookTypeController.getBookTypePage(javax.servlet.http.HttpServletRequest) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/main],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.june.controller.HomeController.home() 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:179) RMI TCP Connection(5)-127.0.0.1 Mapped "{[/getpage],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.june.controller.HomeController.home2(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.handler.AbstractUrlHandlerMapping.registerHandler(AbstractUrlHandlerMapping.java:315) RMI TCP Connection(5)-127.0.0.1 Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0' 
+    [INFO][2017-07-20 09:51:32] org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:473) RMI TCP Connection(5)-127.0.0.1 FrameworkServlet 'spring': initialization completed in 327 ms 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:212) http-nio-8080-exec-1 Obtaining JDBC connection 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:218) http-nio-8080-exec-1 Obtained JDBC connection 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.transaction.spi.AbstractTransactionImpl.begin(AbstractTransactionImpl.java:158) http-nio-8080-exec-1 begin 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:69) http-nio-8080-exec-1 initial autocommit status: true 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doBegin(JdbcTransaction.java:71) http-nio-8080-exec-1 disabling autocommit 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.QueryTranslatorImpl.parse(QueryTranslatorImpl.java:265) http-nio-8080-exec-1 parse() - HQL: from com.june.dto.BookType 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.QueryTranslatorImpl.showHqlAst(QueryTranslatorImpl.java:283) http-nio-8080-exec-1 --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       \-[FROM] Node: 'from'
+          \-[RANGE] Node: 'RANGE'
+             \-[DOT] Node: '.'
+                +-[DOT] Node: '.'
+                |  +-[DOT] Node: '.'
+                |  |  +-[IDENT] Node: 'com'
+                |  |  \-[IDENT] Node: 'june'
+                |  \-[IDENT] Node: 'dto'
+                \-[IDENT] Node: 'BookType'
+ 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.ErrorCounter.throwQueryException(ErrorCounter.java:82) http-nio-8080-exec-1 throwQueryException() : no errors 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.beforeStatement(HqlSqlBaseWalker.java:121) http-nio-8080-exec-1 select << begin [level=1, statement=select] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.tree.FromElement.doInitialize(FromElement.java:157) http-nio-8080-exec-1 FromClause{level=1} : com.june.dto.BookType (<no alias>) -> booktype0_ 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.beforeStatementCompletion(HqlSqlBaseWalker.java:125) http-nio-8080-exec-1 select : finishing up [level=1, statement=select] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.HqlSqlWalker.processQuery(HqlSqlWalker.java:629) http-nio-8080-exec-1 processQuery() :  ( SELECT ( FromClause{level=1} book.booktype booktype0_ ) ) 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.HqlSqlWalker.createSelectClauseFromFromClause(HqlSqlWalker.java:869) http-nio-8080-exec-1 Derived SELECT clause created. 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.util.JoinProcessor.addJoinNodes(JoinProcessor.java:177) http-nio-8080-exec-1 Using FROM fragment [book.booktype booktype0_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.afterStatementCompletion(HqlSqlBaseWalker.java:129) http-nio-8080-exec-1 select >> end [level=1, statement=select] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:252) http-nio-8080-exec-1 --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (book.booktype)
+    +-[SELECT_CLAUSE] SelectClause: '{derived select clause}'
+    |  +-[SELECT_EXPR] SelectExpressionImpl: 'booktype0_.id as id1_1_' {FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=book.booktype,tableAlias=booktype0_,origin=null,columns={,className=com.june.dto.BookType}}}
+    |  \-[SQL_TOKEN] SqlFragment: 'booktype0_.parentid as parentid2_1_, booktype0_.typename as typename3_1_'
+    \-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[], fromElementByTableAlias=[booktype0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+       \-[FROM_FRAGMENT] FromElement: 'book.booktype booktype0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=null,role=null,tableName=book.booktype,tableAlias=booktype0_,origin=null,columns={,className=com.june.dto.BookType}}
+ 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.ErrorCounter.throwQueryException(ErrorCounter.java:82) http-nio-8080-exec-1 throwQueryException() : no errors 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.QueryTranslatorImpl.generate(QueryTranslatorImpl.java:235) http-nio-8080-exec-1 HQL: from com.june.dto.BookType 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.QueryTranslatorImpl.generate(QueryTranslatorImpl.java:236) http-nio-8080-exec-1 SQL: select booktype0_.id as id1_1_, booktype0_.parentid as parentid2_1_, booktype0_.typename as typename3_1_ from book.booktype booktype0_ 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.hql.internal.ast.ErrorCounter.throwQueryException(ErrorCounter.java:82) http-nio-8080-exec-1 throwQueryException() : no errors 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.jdbc.spi.SqlStatementLogger.logStatement(SqlStatementLogger.java:104) http-nio-8080-exec-1 
+    select
+        booktype0_.id as id1_1_,
+        booktype0_.parentid as parentid2_1_,
+        booktype0_.typename as typename3_1_ 
+    from
+        book.booktype booktype0_ 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.processResultSet(Loader.java:941) http-nio-8080-exec-1 Result set row: 0 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [17] as column [id1_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.getRow(Loader.java:1475) http-nio-8080-exec-1 Result row: EntityKey[com.june.dto.BookType#17] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [0] as column [parentid2_1_] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [Èí¼þ] as column [typename3_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.processResultSet(Loader.java:941) http-nio-8080-exec-1 Result set row: 1 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [18] as column [id1_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.getRow(Loader.java:1475) http-nio-8080-exec-1 Result row: EntityKey[com.june.dto.BookType#18] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [17] as column [parentid2_1_] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [C#] as column [typename3_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.processResultSet(Loader.java:941) http-nio-8080-exec-1 Result set row: 2 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [20] as column [id1_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.getRow(Loader.java:1475) http-nio-8080-exec-1 Result row: EntityKey[com.june.dto.BookType#20] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [17] as column [parentid2_1_] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [JAVA] as column [typename3_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.processResultSet(Loader.java:941) http-nio-8080-exec-1 Result set row: 3 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [22] as column [id1_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.getRow(Loader.java:1475) http-nio-8080-exec-1 Result row: EntityKey[com.june.dto.BookType#22] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [0] as column [parentid2_1_] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [Óý¶ùÀà] as column [typename3_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.processResultSet(Loader.java:941) http-nio-8080-exec-1 Result set row: 4 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [23] as column [id1_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.loader.Loader.getRow(Loader.java:1475) http-nio-8080-exec-1 Result row: EntityKey[com.june.dto.BookType#23] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [0] as column [parentid2_1_] 
+    [TRACE][2017-07-20 09:51:41] org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:74) http-nio-8080-exec-1 Found [LINUX] as column [typename3_1_] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:158) http-nio-8080-exec-1 Resolving associations for [com.june.dto.BookType#17] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:277) http-nio-8080-exec-1 Done materializing entity [com.june.dto.BookType#17] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:158) http-nio-8080-exec-1 Resolving associations for [com.june.dto.BookType#18] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:277) http-nio-8080-exec-1 Done materializing entity [com.june.dto.BookType#18] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:158) http-nio-8080-exec-1 Resolving associations for [com.june.dto.BookType#20] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:277) http-nio-8080-exec-1 Done materializing entity [com.june.dto.BookType#20] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:158) http-nio-8080-exec-1 Resolving associations for [com.june.dto.BookType#22] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:277) http-nio-8080-exec-1 Done materializing entity [com.june.dto.BookType#22] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:158) http-nio-8080-exec-1 Resolving associations for [com.june.dto.BookType#23] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:277) http-nio-8080-exec-1 Done materializing entity [com.june.dto.BookType#23] 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.transaction.spi.AbstractTransactionImpl.commit(AbstractTransactionImpl.java:173) http-nio-8080-exec-1 committing 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.doCommit(JdbcTransaction.java:113) http-nio-8080-exec-1 committed JDBC Connection 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction.releaseManagedConnection(JdbcTransaction.java:126) http-nio-8080-exec-1 re-enabling autocommit 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:232) http-nio-8080-exec-1 Releasing JDBC connection 
+    [DEBUG][2017-07-20 09:51:41] org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.releaseConnection(LogicalConnectionImpl.java:250) http-nio-8080-exec-1 Released JDBC connection 
+    [INFO][2017-07-20 09:52:47] org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1042) localhost-startStop-2 Closing WebApplicationContext for namespace 'spring-servlet': startup date [Thu Jul 20 09:51:32 CST 2017]; parent: Root WebApplicationContext 
+    [INFO][2017-07-20 09:52:47] org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:444) localhost-startStop-2 Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@14cd02d: defining beans [mvcContentNegotiationManager,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,bookController,bookTypeController,homeController,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0,org.springframework.web.servlet.handler.SimpleUrlHandlerMapping#0,org.springframework.web.servlet.handler.MappedInterceptor#1,org.springframework.web.servlet.handler.MappedInterceptor#2,org.springframework.web.servlet.view.InternalResourceViewResolver#0,org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver#0,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@a07baa 
+    

@@ -1,0 +1,24 @@
+采用easyui作为前端，把下面这个产品，自己实现(基于javaweb项目)：
+devplatform (软件开发平台)
+产品说明地址：
+http://www.hotent.com/X5/product.html
+系统演示地址：
+http://hotent.yicp.io:8086/x5/login
+
+
+
+代码模块	                    包说明
+前端Web层	                    前端web层，包括Jsp 、Js、Css
+控制Cotnroller层	            所有Controller类
+业务模型层	                    所有实体类
+所有IBatis的映射文件及Sql配置	前端web层，包括Jsp 、Js、Css
+资源配置层	                    所有资源配置文件，包括Spring的配置
+FineReport报表整合代码	        整合FineReport的代码
+代码生成器打包模块	            用于二次开发快速生成功能模块代码
+流程设计器打包模块	            在线定制流程
+数据库访问Dao层	                所有Dao类
+业务Service层	                所有Service层类
+基础类库	                    所有基础类
+代码生成器源代码	            开放代码生成器的所有底层代码
+在线设计器源代码	            Ibm Log Elixir设计器源代码
+日程展示控件代码	            Ibm Log Elixir 日程展示控件代码

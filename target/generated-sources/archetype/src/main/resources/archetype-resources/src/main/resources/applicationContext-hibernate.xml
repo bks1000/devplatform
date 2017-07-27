@@ -1,0 +1,79 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+     xmlns:aop="http://www.springframework.org/schema/aop"  
+     xmlns:tx="http://www.springframework.org/schema/tx"  
+     xmlns:context="http://www.springframework.org/schema/context"  
+     xsi:schemaLocation="  
+         http://www.springframework.org/schema/beans  
+         http://www.springframework.org/schema/beans/spring-beans.xsd  
+         http://www.springframework.org/schema/tx  
+         http://www.springframework.org/schema/tx/spring-tx.xsd  
+         http://www.springframework.org/schema/aop  
+         http://www.springframework.org/schema/aop/spring-aop.xsd  
+         http://www.springframework.org/schema/context  
+         http://www.springframework.org/schema/context/spring-context.xsd">  
+<!--     <context:component-scan base-package="com.test" />   -->
+<!--     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">   -->
+<!--       <property name="locations">   -->
+<!--         <list>   -->
+<!--             <value>classpath:jdbc.properties</value>   -->
+<!--         </list>   -->
+<!--       </property>   -->
+<!--     </bean>   -->
+<!--     <bean id="c3p0DataSource" destroy-method="close"   -->
+<!--         class="com.mchange.v2.c3p0.ComboPooledDataSource">   -->
+<!--         <property name="driverClass" value="${symbol_dollar}{driverClass}" />   -->
+<!--         <property name="jdbcUrl" value="${symbol_dollar}{url}" />   -->
+<!--         <property name="user" value="${symbol_dollar}{user}" />   -->
+<!--         <property name="password" value="${symbol_dollar}{password}" />   -->
+<!--         <property name="initialPoolSize" value="${symbol_dollar}{initialPoolSize}" />   -->
+<!--         <property name="minPoolSize" value="${symbol_dollar}{minPoolSize}" />   -->
+<!--         <property name="maxPoolSize" value="${symbol_dollar}{maxPoolSize}" />   -->
+<!--         <property name="maxIdleTime" value="${symbol_dollar}{maxIdleTime}" />   -->
+<!--     </bean>                    -->
+	<!-- <bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:hibernate.properties</value>
+            </list>
+        </property>  
+    </bean> -->
+    <bean id="sessionFactory"  
+        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource" />  
+        <property name="packagesToScan">  
+            <list>  
+                <value>${package}</value>  
+            </list>  
+        </property>  
+        <property name="hibernateProperties">  
+            <props>  
+                <prop key="hibernate.dialect">${symbol_dollar}{dialect}</prop>  
+                <prop key="hibernate.show_sql">${symbol_dollar}{show_sql}</prop>  
+                <prop key="hibernate.format_sql">${symbol_dollar}{format_sql}</prop>  
+                <prop key="hibernate.use_sql_commants">${symbol_dollar}{use_sql_comments}</prop>  
+<!--                 <prop key="hibernate.hbm2ddl.auto">${symbol_dollar}{hbm2ddl.auto}</prop>   -->
+            </props>  
+        </property>
+    </bean>  
+    <bean id="txManagerH"  
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">  
+        <property name="sessionFactory" ref="sessionFactory" />  
+    </bean>  
+    <tx:advice id="txAdviceH" transaction-manager="txManagerH">  
+        <tx:attributes>  
+        	<tx:method name="save*" propagation="REQUIRED"/>
+        	<tx:method name="del*" propagation="REQUIRED"/>
+            <tx:method name="get*" read-only="true" />  
+            <tx:method name="*" />  
+        </tx:attributes>  
+    </tx:advice>  
+    <aop:config>  
+        <aop:pointcut id="bizMethods" expression="execution(* ${package}.service.*.*(..))" />  
+        <aop:advisor advice-ref="txAdviceH" pointcut-ref="bizMethods" />  
+    </aop:config>  
+</beans> 

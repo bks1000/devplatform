@@ -1,6 +1,8 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <script type="text/javascript" src="${ctx }/static/jquery/dist/jquery.js" charset="utf-8"></script>
-<script type="text/javascript" src="${ctx }/static/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="${ctx }/static/jquery-easyui/jquery.easyui.min.js" charset="utf-8"></script>
+<link rel="Stylesheet" type="text/css" href="${ctx }/static/jquery-easyui/themes/bootstrap/easyui.css" />
+
+<script type="text/javascript" src="${ctx}/static/bootstrap/js/bootstrap.js" charset="utf-8"></script>
 <link rel="Stylesheet" type="text/css" href="${ctx }/static/bootstrap/css/bootstrap.css" />
-<link href="${ctx }/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-<link href="${ctx }/static/assets/styles.css" rel="stylesheet" media="screen">
+

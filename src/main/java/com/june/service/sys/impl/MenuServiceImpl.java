@@ -4,15 +4,15 @@
  */
  package com.june.service.sys.impl;
 
-import java.util.List;
-
-import com.june.dto.sys.Menu;
 import com.june.dao.sys.IMenuDao;
+import com.june.dto.sys.Menu;
 import com.june.service.BaseService;
 import com.june.service.sys.IMenuService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class MenuServiceImpl extends BaseService implements IMenuService{
@@ -39,8 +39,9 @@ public class MenuServiceImpl extends BaseService implements IMenuService{
 		dao.delMenuById(Id);
 	}
 
-	public List<Menu> getChildList(String parentId) {
-		return  dao.getChildList(parentId);
+	public List<Map<String,Object>> getAllChildList(String parentId) {
+		return  dao.getAllChildList(parentId);
 	}
 
+	public List<Menu> getChildList(String parentId){return dao.getChildList(parentId);}
 }

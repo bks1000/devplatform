@@ -73,6 +73,15 @@ public class Menu extends BaseDto {
 	public void setName(String value) {
 		this.name = value;
 	}
+
+	@Column(name = "parentid", unique = false, nullable = true, insertable = true, updatable = true, length = 40)
+	public String getParentid() {
+		return parentid;
+	}
+
+	public void setParentid(String parentid) {
+		this.parentid = parentid;
+	}
 	
 	@Column(name = "idx", unique = false, nullable = true, insertable = true, updatable = true, length = 10)
 	public Integer getIdx() {
@@ -92,15 +101,6 @@ public class Menu extends BaseDto {
 		this.url = value;
 	}
 
-	@Column(name = "parentid", unique = false, nullable = true, insertable = true, updatable = true, length = 40)
-	public String getParentid() {
-		return parentid;
-	}
-
-	public void setParentid(String parentid) {
-		this.parentid = parentid;
-	}
-
 	@Column(name = "ts", unique = false, nullable = true, insertable = true, updatable = true, length = 30)
 	public String getTs() {
 		return ts;
@@ -109,6 +109,7 @@ public class Menu extends BaseDto {
 	public void setTs(String ts) {
 		this.ts = ts;
 	}
+
 	@Column(name = "rs", unique = false, nullable = true, insertable = true, updatable = true, length = 1)
 	public String getRs() {
 		return rs;
@@ -126,7 +127,7 @@ public class Menu extends BaseDto {
 	public void setRemark(String value) {
 		this.remark = value;
 	}
-	
+
 
 	public String toString() {
 		return new ToStringBuilder(this)

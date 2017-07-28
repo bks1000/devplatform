@@ -1,52 +1,54 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@include file="base/taglibs.jsp"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-<%@ include file="base/jscss.jsp" %>
-<script language="javascript" type="text/javascript">   
-	function jump(url,obj){
-    	$("#mainBody").load(url,function(){ 
-    		$("#mainBody").fadeIn(100);
-    	});
-    	$("li").each(function(){
-    		$(this).removeAttr("class");
-    	});
-    	$(obj).parent().attr("class","active");
-    }
-</script>
+    <title>Title</title>
+    <jsp:include page="base/jscss.jsp"/>
+    <script type="text/javascript">
+        var ctx = "${ctx}";
+    </script>
+    <script type="text/javascript" src="${ctx}/static/common/easyuiex.js"></script>
+    <script type="text/javascript" src="${ctx}/static/common/main.js"></script>
 </head>
 <body>
-	<jsp:include page="base/navbar.jsp"></jsp:include>
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<%@include file="base/sidebar.jsp" %>
-			<div class="span8" id="content">
-				<div class="row-fluid">
-					<div id="mainBody"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 通用的模态弹出框 -->
-	<div class="modal fade" id="mainModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">编辑</h4>
-				</div>
-				<div class="modal-body"></div>
-				<div class="modal-footer"></div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal -->
-	</div>
+    <div class="easyui-layout" data-options="fit:true">
+        <div data-options="region:'north',href:'${ctx}/navbar'" style="height:43px">
+        </div>
+        <div data-options="region:'south',split:false" style="height:20px;">
+            develop platform
+        </div>
+        <div data-options="region:'west',split:true" title="" style="width:260px;">
+            <!--<ul id="menutree"></ul>-->
+            <div class="panel-header" style="width: 100%">
+                <div class="panel-title"></div>
+                <div class="panel-tool"></div>
+            </div>
+            <div id="acc" class="easyui-accordion" data-options="fit:true,border:false,nimate:true,lines:true"></div>
+        </div>
+        <div data-options="region:'center',border:false,fit:true" id="tt" class="easyui-tabs">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            //添加主界面
+            //OP.addPanel('${ctx}/chart',"主页");
+            //树形菜单点击动作，打开新标签，加载
+            //tree如何绑定自己的数据段
+            /*$('#menutree').tree({ //https://zhidao.baidu.com/question/532380131.html
+                url:'${ctx}/menu',
+                method:'get',
+                animate:true,
+                onClick: function(node){
+                    var url = node.url;
+                    var name = node.name;
+                    if (name != '菜单管理'){
+                        url = url+"/list";
+                    }
+                    OP.addPanel(url,text);
+                }
+            });*/
+        });
+
+    </script>
 </body>
 </html>

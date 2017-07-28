@@ -17,22 +17,45 @@ public class Page implements Serializable {
 	private long start; // 当前页第一条数据在List中的位置,从0开始
 
     private List data; // 当前页中存放的记录,类型一般为List
-
-    private long totalCount; // 总记录数
     
     private int pageNumShow = Const.DEFAULT_PAGE_NUM_SHOW; //页标数字多少个
     
-    private List rows; //分页结果集
+    //private List rows; //分页结果集
     
-    private int total; //总记录数
+    private long total; //总记录数
+
+    private  int code;//状态码
+
+    private String msg;//消息信息
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
     
     public long getTotal() {
-		return totalCount;
+		return total;
 	}
-	
-	public List getRows() {
-		return data;
-	}
+	public void setTotal(long total){this.total=total;}
+
+    public List getData() {
+        return data;
+    }
+
+    public void setData(List data) {
+        this.data = data;
+    }
 	
     /**
      * 构造方法，只构造空页.
@@ -52,25 +75,18 @@ public class Page implements Serializable {
     public Page(long start, long totalSize, int pageSize, List data) {
         this.pageSize = pageSize;
         this.start = start;
-        this.totalCount = totalSize;
+        this.total = totalSize;
         this.data = data;
-    }
-
-    /**
-     * 取总记录数.
-     */
-    public long getTotalCount() {
-        return this.totalCount;
     }
 
     /**
      * 取总页数.
      */
     public long getTotalPageCount() {
-        if (totalCount % pageSize == 0)
-            return totalCount / pageSize;
+        if (total % pageSize == 0)
+            return total / pageSize;
         else
-            return totalCount / pageSize + 1;
+            return total / pageSize + 1;
     }
 
     /**

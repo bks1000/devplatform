@@ -8,3 +8,6 @@ bootstrap + freemark + easyui<br/>
 
 http://maven.apache.org/guides/mini/guide-creating-archetypes.html
 http://blog.csdn.net/uncleja/article/details/7252780
+
+# spring boot
+http://projects.spring.io/spring-boot/

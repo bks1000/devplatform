@@ -1,110 +1,32 @@
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container-fluid">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#">Admin Panel</a>
-            <div class="nav-collapse collapse">
-                <ul class="nav pull-right">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" import="com.june.dto.sys.Menu" language="java" %>
+<nav class="navbar navbar-static-top" role="navigation">
+    <div>
+        <div class="navbar-inner">
+            <ul class="nav navbar-nav">
+                <li><a>Develop Platform</a></li>
+                <c:forEach items="${menus}" var="menu">
+                    <li name="nav" onclick="OP.setState(this)"><a onclick="OP.loadMenu('${menu.id}','${menu.name}')">${menu.name}</a></li>
+                </c:forEach>
+
+                <%--<li class="active"><a href="#">iOS</a></li>
                     <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Vincent Gabriel <i class="caret"></i>
-
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a tabindex="-1" href="#">Profile</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a tabindex="-1" href="login.html">Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav">
-                    <li class="active">
-                        <a href="#">Dashboard</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
-
-                        </a>
-                        <ul class="dropdown-menu" id="menu1">
-                            <li>
-                                <a href="#">Tools <i class="icon-arrow-right"></i>
-
-                                </a>
-                                <ul class="dropdown-menu sub-menu">
-                                    <li>
-                                        <a href="#">Reports</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Logs</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Errors</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">SEO Settings</a>
-                            </li>
-                            <li>
-                                <a href="#">Other Link</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">Other Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Other Link</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Content <i class="caret"></i>
-
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a tabindex="-1" href="#">Blog</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">News</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">Custom Pages</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">Calendar</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a tabindex="-1" href="#">FAQ</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Users <i class="caret"></i>
-
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a tabindex="-1" href="#">User List</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">Search</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="#">Permissions</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Java
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">jmeter</a></li>
+                        <li><a href="#">EJB</a></li>
+                        <li><a href="#">Jasper Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">分离的链接</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">另一个分离的链接</a></li>
+                    </ul>
+                </li>--%>
+            </ul>
         </div>
     </div>
-</div>
+</nav>
+

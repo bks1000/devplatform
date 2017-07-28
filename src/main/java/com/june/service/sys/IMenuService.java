@@ -4,10 +4,10 @@
  */
  package com.june.service.sys;
 
-import java.util.List;
-
-
 import com.june.dto.sys.Menu;
+
+import java.util.List;
+import java.util.Map;
 
 public interface IMenuService{
 	
@@ -23,7 +23,14 @@ public interface IMenuService{
 	public void delMenuById(java.lang.String Id);
 
 	/**
-	 * 根据parentid获取子菜单
+	 * 根据parentid获取全部子菜单
+	 * @param parentId
+	 * @return
+	 */
+	public List<Map<String,Object>> getAllChildList(String parentId);
+
+	/**
+	 * 根据parentid获取模块菜单
 	 * @param parentId
 	 * @return
 	 */

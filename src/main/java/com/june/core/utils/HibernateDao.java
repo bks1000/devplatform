@@ -1,13 +1,5 @@
 package com.june.core.utils;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -21,6 +13,14 @@ import org.hibernate.internal.CriteriaImpl.Subcriteria;
 import org.hibernate.transform.Transformers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * hibernate 操作基类
@@ -87,8 +87,7 @@ public class HibernateDao {
     /**
      * 查看存在PO
      * @param <T>
-     * 
-     * @param entity
+     *
      */
     public <T> boolean exists(Class<T> entityClass,Serializable id) {
         return get(entityClass,id) != null;
@@ -135,8 +134,7 @@ public class HibernateDao {
 
     /**
      * 执行带参的HQL查询
-     * 
-     * @param sql
+     *
      * @param params
      * @return 查询结果
      */
@@ -204,8 +202,7 @@ public class HibernateDao {
      * 根据给定的分页信息(<code>page</code>参数)和detached Hibernate criteria对象，执行分页查询。
      * <code>page</code>对象中的<code>autoCount</code>属性如果为true，则自动执行
      * {@link #count(CriteriaImpl)}查询。
-     * 
-     * @param page 给出startIndex,numPerPage,autoCount属性。
+     *
      * @param criteria detached Hibernate criteria 对象
      * @return 传入的page参数，它的data和totalCount属性是被重新赋值的（根据查询结果）。
      */
@@ -220,8 +217,7 @@ public class HibernateDao {
      * 根据给定的分页信息(<code>page</code>参数)和Hibernate criteria对象，执行分页查询。
      * <code>page</code> 对象中的<code>autoCount</code>属性如果为true，则自动执行
      * {@link #count(CriteriaImpl)}查询。
-     * 
-     * @param page 给出startIndex,numPerPage,autoCount属性。
+     *
      * @param criteria Hibernate criteria 对象
      * @return 传入的page参数，它的data和totalCount属性是被重新赋值的（根据查询结果）。
      */

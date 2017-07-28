@@ -1,0 +1,26 @@
+.panel-header{
+    padding: 5px;
+    position:relative;
+    overflow-y: hidden;
+}
+
+.panel-title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 6px;
+}
+.layout-button-up {
+    background: url('images/layout_arrows.png') no-repeat -16px -16px;
+}
+.layout-button-down {
+    background: url('images/layout_arrows.png') no-repeat -16px 0;
+}
+.layout-button-left {
+    background: url('images/layout_arrows.png') no-repeat 0 0;
+}
+.layout-button-right {
+    background: url('images/layout_arrows.png') no-repeat 0 -16px #fff;
+}

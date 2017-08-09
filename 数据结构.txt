@@ -1,0 +1,8 @@
+ʵ�����
+{"status":"enabled","isExternal":"0","dsName":"LOCAL","isCreateTable":"0",
+"attributeList":[{"desc":"dd1","isRequired":"0","dataType":"varchar","attrLength":50,"isNew":true,"name":"dd1","decimalLen":0,"format":"yyyy-MM-dd HH:mm:ss","defaultValue":"","sn":1},
+{"desc":"ddd2","isRequired":"0","dataType":"varchar","attrLength":"50","isNew":true,"name":"ddd2","sn":2},
+{"desc":"s","isRequired":"0","dataType":"number","attrLength":10,"isNew":true,"name":"ss","decimalLen":0,"sn":3}],"packageId":"10000002791927","desc":"11","name":"dddd"}
+
+实体管理模块，先学一下angularjs再做。
+

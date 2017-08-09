@@ -1,17 +1,15 @@
 package com.june.core.utils;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.apache.log4j.Logger;
+import org.json.JSONObject;
 import org.springframework.beans.BeanUtils;
 import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
@@ -521,4 +519,25 @@ public static Object newInstance(String name) {
 
     return setters;
   }*/
+
+  /**
+   * 填充实体数据到Map
+   * @param dto
+   * @param retMap
+   * @param <T>
+   */
+  public static <T> void fillDto2Map(T dto,Map<String,Object> retMap){
+    Class cls = dto.getClass();
+    Field[] fields = cls.getDeclaredFields();
+    for(Field field:fields){
+      String name = field.getName();
+      try {
+        Method m = cls.getMethod("get" + name.substring(0, 1).toUpperCase() + name.substring(1));
+        Object value = m.invoke(dto);
+        retMap.put(name,value);
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+  }
 }

@@ -1,10 +1,11 @@
 package com.june.core.utils;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Enumeration;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
 
 public class PageUtils {
 
@@ -35,5 +36,23 @@ public class PageUtils {
 		}else {
 			return o.toString();
 		}
+	}
+
+	/**
+	 * 获取请求的body.
+	 * Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+	 * 这种情况下，只能用原始的流的方式读取数据。
+	 * @param request
+	 * @return
+	 * @throws IOException
+	 */
+	public static String getRequestBody(HttpServletRequest request) throws IOException {
+		BufferedReader br = request.getReader();
+
+		String str, wholeStr = "";
+		while((str = br.readLine()) != null){
+			wholeStr += str;
+		}
+		return  wholeStr;
 	}
 }

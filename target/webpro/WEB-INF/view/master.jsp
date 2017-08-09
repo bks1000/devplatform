@@ -3,15 +3,14 @@
 <head>
     <title>Title</title>
     <jsp:include page="base/jscss.jsp"/>
-    <script type="text/javascript">
-        var ctx = "${ctx}";
-    </script>
-    <script type="text/javascript" src="${ctx}/static/common/easyuiex.js"></script>
     <script type="text/javascript" src="${ctx}/static/common/main.js"></script>
+    <style type="text/css">
+        .panel-footer{padding: 0px;}
+    </style>
 </head>
 <body>
     <div class="easyui-layout" data-options="fit:true">
-        <div data-options="region:'north',href:'${ctx}/navbar'" style="height:51px">
+        <div data-options="region:'north',height:51,href:'${ctx}/navbar'" style="height:51px;">
         </div>
         <div data-options="region:'south',split:false" style="height:20px;">
             develop platform
@@ -28,6 +27,15 @@
 
         </div>
     </div>
+    <div id="dd" style="overflow-x:hidden;"></div>
+    <!--<div id="tools">
+        <a class="icon-add" onclick="javascript:alert('add')"></a>
+        <a class="icon-edit" onclick="javascript:alert('edit')"></a>
+    </div>
+    <div id="footer" style="height: 30px;">
+        <a id="btnsave" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>
+        <a id="btncancel" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">取消</a>
+    </div>-->
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             //添加主界面

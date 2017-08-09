@@ -57,15 +57,25 @@ var OP = {
      * @param obj
      */
     setState:function (obj) {
-        $("li [name='nav']").each(function (i) {
+        $("li[name='nav']").each(function (i) {
             $(this).removeAttr("class");
         });
         $(obj).attr("class", "active");
     },
+    /**
+     * 根据模块ID加载菜单
+     * @param id
+     * @param text
+     */
     loadMenu:function(id,text){
+        var panels = $('#acc').accordion('panels');
+        for(var i=0;i<panels.length;i++) {
+            $('#acc').accordion('remove', i);
+        }
         $(".panel-title").text(text);
         $.get(ctx+'/menu',{"menuid":id},function (data) {
             $.each(data, function(i, n) {//加载父类节点即一级菜单
+
                 if(n.parentid==id){
                     $('#acc').accordion('add', {
                         title : n.name,
@@ -75,9 +85,38 @@ var OP = {
                         '</ul></div>',
                     });
                 }else{
-                    $('#'+n.parentid).append('<li class="list-group-item"><a onclick="OP.addPanel('+n.url+','+n.name+')">'+n.name+'</a></li>');
+                    var url = n.url;
+                    $('#'+n.parentid).append('<li class="list-group-item"><a onclick="OP.addPanel(\''+ctx+  n.url +'\',\''+n.name+'\')" target='+ n.url +'>'+n.name+'</a></li>');
                 }
             });
         });
+    },
+    showDialog:function (obj) {
+        var content = '<iframe src="' + obj.href + '" width="100%" height="99%" frameborder="0" style="overflow-x: hidden"></iframe>';
+        //var boarddiv = '<div id="msgwindow" title="' + title + '"></div>'//style="overflow:hidden;"可以去掉滚动条
+        //$(document.body).append(boarddiv);
+        top.$('#dd').window({
+            width:obj.width,
+            height:obj.height,
+            maximized:obj.maximized,
+            modal:obj.modal?obj.modal:true,
+            title:obj.title,
+            closable:obj.closable?obj.closable:true,
+            resizable:obj.resizable?obj.resizable:true,
+            //href:obj.href,
+            content: content,
+            onClose:obj.onClose,
+            //tools:'#tools',
+            //footer:'#footer'
+        });
+        /*$('#btnsave').bind('click', function(){
+            alert('save');
+        });
+        $('#btncancel').bind('click', function(){
+            alert('canel');
+        });*/
+    },
+    closeDialog:function () {
+        top.$('#dd').window('close');
     }
 };

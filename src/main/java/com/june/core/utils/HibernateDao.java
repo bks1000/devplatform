@@ -48,6 +48,7 @@ public class HibernateDao {
 	public void saveOrUpdate(Object entity) {
         try{
             getSession().saveOrUpdate(entity);
+
         }
         catch(Exception e){
             e.printStackTrace();
@@ -61,8 +62,9 @@ public class HibernateDao {
      * @param entity
      */
     public void update(Object entity) {
-        getSession().update(entity);
-
+        //Hibernate的merge与update方法的区别:http://blog.csdn.net/ystyaoshengting/article/details/7715626
+        //getSession().update(entity);
+        getSession().merge(entity);//http://blog.csdn.net/lang_man_xing/article/details/7572964
     }
     
     /**

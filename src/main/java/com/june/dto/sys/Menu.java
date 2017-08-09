@@ -4,24 +4,22 @@
  */
  package com.june.dto.sys;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 import com.june.dto.BaseDto;
-import org.hibernate.annotations.GenericGenerator;
-import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "menu")
 public class Menu extends BaseDto {
 	
 	//alias
-	public static final String TABLE_ALIAS = "Menu";
+	/*public static final String TABLE_ALIAS = "Menu";
 	public static final String ALIAS_ID = "id";
 	public static final String ALIAS_NAME = "name";
 	public static final String ALIAS_PARENTID="parentid";
@@ -29,7 +27,7 @@ public class Menu extends BaseDto {
 	public static final String ALIAS_URL = "url";
 	public static final String ALIAS_TS = "ts";
 	public static final String ALIAS_RS="rs";
-	public static final String ALIAS_REMARK = "remark";
+	public static final String ALIAS_REMARK = "remark";*/
 	
 	//date formats
 	
@@ -57,9 +55,9 @@ public class Menu extends BaseDto {
 		this.id = value;
 	}
 	
-	@Id 
-	@GenericGenerator(name="systemUUID",strategy="uuid")
-	@GeneratedValue(generator = "systemUUID")
+	@Id
+	//@GenericGenerator(name="systemUUID",strategy="uuid")
+	//@GeneratedValue(generator = "systemUUID")
 	@Column(name = "id", unique = true, nullable = false, insertable = true, updatable = true, length = 40)
 	public String getId() {
 		return this.id;

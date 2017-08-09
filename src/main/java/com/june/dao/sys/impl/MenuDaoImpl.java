@@ -28,9 +28,14 @@ public class MenuDaoImpl extends BaseDao implements IMenuDao{
 	
 	
 	public void saveMenu(Menu dto) {
-		saveOrUpdate(dto);
+		//save(dto);
+		//saveOrUpdate(dto);
+		if (exists(Menu.class,dto.getId())){
+			update(dto);
+		}else {
+			save(dto);
+		}
 	}
-	
 			
 	public void delMenuById(String Id) {
 		executeSql("DELETE FROM Menu WHERE Id=?", Id);

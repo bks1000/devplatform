@@ -29,6 +29,7 @@ import java.util.Map;
 
 /**
  * @author june email:359546407@qq.com
+ * TODO:说明:hibernate一对多没有使用，下次用用！
  * @version 1.0
  * @since 1.0
  */@Controller
@@ -139,7 +140,18 @@ public class ForminfoController {
 		service.delForminfoById(id);
 		
 		Map<String, Object> ret = new HashMap<String, Object>();
-		ret.put("code", 0);
+		ret.put("code", 1);
+		return ret;
+	}
+
+	@RequestMapping("/build")
+	public Map<String, Object> buildTable(HttpServletRequest request){
+		Map<String, Object> data = PageUtils.getParameters(request);
+		String id = PageUtils.getString(data.get("id"));
+		service.buildTable(id);
+
+		Map<String, Object> ret = new HashMap<String, Object>();
+		ret.put("code", 1);
 		return ret;
 	}
 }

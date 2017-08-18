@@ -122,3 +122,10 @@ $.extend($.validator.messages, {
     max: $.validator.format("请输入一个最大为 {0} 的值"),
     min: $.validator.format("请输入一个最小为 {0} 的值")
 });
+/**
+ * 消息窗口按钮文本
+ */
+$.extend($.messager.defaults,{
+    ok:"确定",
+    cancel:"取消"
+});

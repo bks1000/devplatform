@@ -9,7 +9,7 @@
         <module name="devplatform" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.7">
       <module name="devplatform" target="1.5" />
     </bytecodeTargetLevel>
   </component>

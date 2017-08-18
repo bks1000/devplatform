@@ -21,5 +21,6 @@ public interface IFormfieldmetaDao {
 	public void saveFormfieldmeta(Formfieldmeta dto);
 			
 	public void delFormfieldmetaById(String Ffid);
-	
+
+	public void delFormfieldmetaByFId(String fid);
 }

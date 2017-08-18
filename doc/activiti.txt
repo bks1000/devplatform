@@ -1,0 +1,24 @@
+activiti之流程变量值Business_key
+http://blog.csdn.net/lovemenghaibin/article/details/50608300
+    我们在做工作流的时候一定是需要将我们的业务和工作流来关联起来的，
+而Activiti给我们提供了一个便利就是Business_key,而这个字段就是专门用来存储我们的业务关键字。
+    例如我们有一个请假的业务，而我的请假信息都已经编写到数据库的表（tb_leaveBill）中了，
+但是我怎么样把我的请假信息关联到activiti的数据库表中，对了，就是用给定的Activiti的Business_key,
+而这里有一个小技巧，例如我的javaBean叫做LeaveBill,而我的请假信息的ID为1，
+那么我就可以让他写成leaveBill.1，技巧就是业务Bean.业务ID，这样我们就能Business_key的设置了.
+
+
+Activiti表单(Form key)
+Form key的应用主要是获取任务节点需要展示的页面
+当我们要打开任务表单的时候可以重定向到任务表单，重定向的action如：　　
+formKey + "?id=" +objId + "&taskId=" +taskId;//objId为业务对象Id  taskId为任务Id   这样就可以在任务表单获取到想要的信息
+
+根据任务id得到Form key
+TaskFormData formData = formService.getTaskFormData(taskId);;
+String formKey = formData.getFormKey();
+
+
+流程相关变量(在act_hi_procinst表中)：
+流程实例ID:proc_inst_id
+业务表ID：Business_key
+流程定义ID:proc_def_id

@@ -43,5 +43,9 @@ public class FormfieldmetaDaoImpl extends BaseDao implements IFormfieldmetaDao {
 	public void delFormfieldmetaById(String Ffid) {
 		executeSql("DELETE FROM Formfieldmeta WHERE Ffid=?", Ffid);
 	}
-	
+
+	public void delFormfieldmetaByFId(String fid) {
+		executeSql("DELETE FROM Formfieldmeta WHERE fid=?",fid);
+	}
+
 }

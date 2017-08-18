@@ -21,5 +21,6 @@ public interface IForminfoService{
 	
 			
 	public void delForminfoById(String Fid);
-	
+
+	public void buildTable(String fid);
 }

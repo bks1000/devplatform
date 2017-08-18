@@ -43,7 +43,11 @@ public class ForminfoServiceImpl extends BaseService implements IForminfoService
 	}
 			
 	public void delForminfoById(String Fid) {
-		dao.delForminfoById(Fid);
+		ffdao.delFormfieldmetaByFId(Fid);//删除子表
+		dao.delForminfoById(Fid);//删除主表
 	}
-	
+
+	public void buildTable(String fid){
+		dao.buildTable(fid);
+	}
 }

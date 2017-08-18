@@ -56,24 +56,31 @@
 	    function del() {
 	        var row = getSelectRow();
 	        if (row){
-                var id =row.fid;
-                $.get("${ctx}/forminfo/del",{"id":id},function (data) {
-                    refresh();
+                $.messager.confirm('确认','您确认想要删除记录吗？',function(r){
+                    if (r){
+                        var id =row.fid;
+                        $.get("${ctx}/forminfo/del",{"id":id},function (data) {
+                            refresh();
+                        });
+                    }
                 });
             }
 	    }
 	    function create() {
             var row = getSelectRow();
             if(row){
-                //TODO 生成实体
+                var id =row.fid;
+                $.get("${ctx}/forminfo/build",{"id":id},function (data) {
+                    refresh();
+                });
             }
 
         }
         function enable() {
-            
+            $.messager.alert('警告','暂不实现');
         }
         function unenable() {
-            
+            $.messager.alert('警告','暂不实现');
         }
 	    /*datagrid 格式化显示*/
         function setrs(value, row, index) {
@@ -84,10 +91,10 @@
             }
         }
         function setcreate(value,row,index) {
-            return row.iscreate? "已生成":"未生成";
+            return row.iscreate==1? "已生成":"未生成";
         }
         function settbname(value, row, index) {
-            return "C_"+row.fname;
+            return "c_"+row.fname;
         }
     </script>
 </head>

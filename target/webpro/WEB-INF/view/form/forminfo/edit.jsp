@@ -111,6 +111,11 @@
 </head>
 <body>
     <form id="ff" class="container" role="form">
+        <div class="row">
+            <!--<span class="col-xs-8"></span>-->
+            <a id="btnsave" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>&nbsp;&nbsp;
+            <a id="btncancel" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">取消</a>
+        </div>
         <input type="hidden" id="fid" name="fid">
 		<div class="row">
             <label class="col-xs-2 control-label" for="tid">类型ID:</label>
@@ -129,11 +134,6 @@
             <div class="col-xs-10">
                 <input class="form-control" id="fmark" name="fmark" maxlength="200" type="text" placeholder="请输入实体描述" required />
             </div>
-        </div>
-		<div class="row">
-            <span class="col-xs-8"></span>
-            <a id="btnsave" class="easyui-linkbutton" data-options="iconCls:'icon-save'">保存</a>&nbsp;&nbsp;
-            <a id="btncancel" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">取消</a>
         </div>
     </form>
 

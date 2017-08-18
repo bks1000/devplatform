@@ -4,5 +4,25 @@
 {"desc":"ddd2","isRequired":"0","dataType":"varchar","attrLength":"50","isNew":true,"name":"ddd2","sn":2},
 {"desc":"s","isRequired":"0","dataType":"number","attrLength":10,"isNew":true,"name":"ss","decimalLen":0,"sn":3}],"packageId":"10000002791927","desc":"11","name":"dddd"}
 
-实体管理模块，先学一下angularjs再做。
+实体管理模块
 
+
+表单元数据定义：
+{"name":"qa","desc":"op","ganged":[],"typeId":"10000002370031","type":"测试表单","key":"qa",
+"expand":{"fields":[{"name":"qjbd","desc":"员工请假表单","path":"qjd.sub_qjbd","type":"sub",
+"fieldType":"sub","boAttrId":"10000002960076","entId":"10000002960076","sn":0,"attrLength":0,"decimalLen":0,"validRule":{"required":false},
+"required":false,"relation":"onetomany","option":{},
+"children":[{"name":"xm","desc":"姓名","path":"qjd.sub_qjbd","type":"varchar","fieldType":"field",
+"boAttrId":"10000002960077","entId":"10000002960076","sn":0,"attrLength":50,"decimalLen":0,"validRule":{"required":false,"maxLength":50},
+"required":false,"ctrlType":"onetext","option":{"height":600,"width":800},"tableName":"qjbd","isError":false,"selected":true,"isEditing":false},
+{"name":"nl","desc":"年龄","path":"qjd.sub_qjbd","type":"varchar","fieldType":"field","boAttrId":"10000002960078","entId":"10000002960076",
+"sn":1,"attrLength":50,"decimalLen":0,"validRule":{"required":false,"maxLength":50},"required":false,"ctrlType":"onetext","option":{},"tableName":"qjbd","isError":false,"selected":true,"isEditing":true},
+{"name":"qjkssj","desc":"请假开始时间","path":"qjd.sub_qjbd","type":"date","fieldType":"field","boAttrId":"10000002960079","entId":"10000002960076","sn":2,"attrLength":50,"decimalLen":0,"validRule":{"required":false,"rules":[{"name":"日期","text":"date"}]},"required":false,"ctrlType":"date","option":{"dataFormat":"yyyy-MM-dd HH:mm:ss","unmodifiable":true},"tableName":"qjbd","isError":false,"dateName":"item.qjkssj","isEditing":false,"selected":true},
+{"name":"qjjssj","desc":"请假结束时间","path":"qjd.sub_qjbd","type":"date","fieldType":"field","boAttrId":"10000002960080","entId":"10000002960076","sn":3,"attrLength":50,"decimalLen":0,"validRule":{"required":false,"rules":[{"name":"日期","text":"date"}]},"required":false,"ctrlType":"date","option":{"dataFormat":"yyyy-MM-dd HH:mm:ss","unmodifiable":true},"tableName":"qjbd","isError":false,"dateName":"item.qjjssj","selected":false,"isEditing":false},
+{"name":"qjsy","desc":"请假事由","path":"qjd.sub_qjbd","type":"clob","fieldType":"field","boAttrId":"10000002960081","entId":"10000002960076","sn":4,"attrLength":0,"decimalLen":0,"validRule":{"required":false},"required":false,"ctrlType":"multitext","option":{},"tableName":"qjbd","isError":false,"selected":true,"isEditing":false},
+{"name":"jlyj","desc":"经理意见","path":"qjd.sub_qjbd","type":"clob","fieldType":"field","boAttrId":"10000002960082","entId":"10000002960076","sn":5,"attrLength":0,"decimalLen":0,"validRule":{"required":false},"required":false,"ctrlType":"multitext","option":{},"tableName":"qjbd","isError":false},
+{"name":"rsyj","desc":"人事意见","path":"qjd.sub_qjbd","type":"clob","fieldType":"field","boAttrId":"10000002960083","entId":"10000002960076","sn":6,"attrLength":0,"decimalLen":0,"validRule":{"required":false},"required":false,"ctrlType":"multitext","option":{},"tableName":"qjbd","isError":false},
+{"name":"jjsy","desc":"交接事宜","path":"qjd.sub_qjbd","type":"clob","fieldType":"field","boAttrId":"10000002960084","entId":"10000002960076","sn":7,"attrLength":0,"decimalLen":0,"validRule":{"required":false},"required":false,"ctrlType":"multitext","option":{},"tableName":"qjbd","isError":false},
+{"name":"bz","desc":"备注","path":"qjd.sub_qjbd","type":"clob","fieldType":"field","boAttrId":"10000002960085","entId":"10000002960076","sn":8,"attrLength":0,"decimalLen":0,"validRule":{"required":false},"required":false,"ctrlType":"multitext","option":{},"tableName":"qjbd","isError":false}],"isEditing":false}],"boDefList":[{"id":"10000002752820","desc":"请假单","supportDB":"1"}]}}
+
+Activiti工作流

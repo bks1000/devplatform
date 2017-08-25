@@ -7,6 +7,9 @@
     <style type="text/css">
         .panel-footer{padding: 0px;}
     </style>
+    <script type="text/javascript">
+        var middleman = null;//弹出窗口和主窗口交互
+    </script>
 </head>
 <body>
     <div class="easyui-layout" data-options="fit:true">
@@ -28,6 +31,8 @@
         </div>
     </div>
     <div id="dd" style="overflow-x:hidden;"></div>
+    <div id="dd2" style="overflow-x:hidden;"></div>
+    <!--<input type="hidden" id="middleman" name="middleman"> 弹出窗口和主窗口交互-->
     <!--<div id="tools">
         <a class="icon-add" onclick="javascript:alert('add')"></a>
         <a class="icon-edit" onclick="javascript:alert('edit')"></a>

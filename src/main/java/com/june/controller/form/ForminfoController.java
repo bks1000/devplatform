@@ -144,6 +144,11 @@ public class ForminfoController {
 		return ret;
 	}
 
+	/**
+	 * 生成实体表
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/build")
 	public Map<String, Object> buildTable(HttpServletRequest request){
 		Map<String, Object> data = PageUtils.getParameters(request);

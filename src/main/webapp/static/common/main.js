@@ -116,7 +116,53 @@ var OP = {
             alert('canel');
         });*/
     },
+    showDialog2:function (obj) {
+        var content = '<iframe src="' + obj.href + '" width="100%" height="99%" frameborder="0" style="overflow-x: hidden"></iframe>';
+        //var boarddiv = '<div id="msgwindow" title="' + title + '"></div>'//style="overflow:hidden;"可以去掉滚动条
+        //$(document.body).append(boarddiv);
+        top.$('#dd2').window({
+            width:obj.width,
+            height:obj.height,
+            maximized:obj.maximized,
+            modal:obj.modal?obj.modal:true,
+            title:obj.title,
+            closable:obj.closable?obj.closable:true,
+            resizable:obj.resizable?obj.resizable:true,
+            //href:obj.href,
+            content: content,
+            onClose:obj.onClose,
+            //tools:'#tools',
+            //footer:'#footer'
+        });
+        /*$('#btnsave').bind('click', function(){
+         alert('save');
+         });
+         $('#btncancel').bind('click', function(){
+         alert('canel');
+         });*/
+    },
     closeDialog:function () {
         top.$('#dd').window('close');
+    },
+    closeDialog2:function () {
+        top.$('#dd2').window('close');
+    },
+    /**
+     * 替换html模板变量(好用)
+     * 用法 tmpl=`<div>{nm}<div>`;dta={nm:'zs'}
+     * @param dta
+     * @param tmpl
+     */
+    formatTemplate:function(dta, tmpl) {
+        var format = {
+            name: function(x) {
+                return x
+            }
+        };
+        return tmpl.replace(/{(\w+)}/g, function(m1, m2) {
+            if (!m2)
+                return "";
+            return (format && format[m2]) ? format[m2](dta[m2]) : dta[m2];
+        });
     }
 };

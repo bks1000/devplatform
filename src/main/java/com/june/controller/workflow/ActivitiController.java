@@ -65,12 +65,16 @@ public class ActivitiController {
     @Autowired
     protected WorkflowProcessDefinitionService workflowProcessDefinitionService;
 
+    @Autowired
     protected RepositoryService repositoryService;
 
+    @Autowired
     protected RuntimeService runtimeService;
 
+    @Autowired
     protected TaskService taskService;
 
+    @Autowired
     protected WorkflowTraceService traceService;
 
     @Autowired

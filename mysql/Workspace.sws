@@ -4,8 +4,9 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{BF0E877A-C2C9-4DBA-AB3C-87FA2063582F}" Name="devplatform_sys" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="devplatform.pdm"/>
-		<Model Expanded="Yes" ID="{A4974363-792F-4773-B126-728AA2F7FA58}" Name="devplatform_form" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="devplatform_form.pdm"/>
+		<Model Expanded="Yes" ID="{BF0E877A-C2C9-4DBA-AB3C-87FA2063582F}" Loaded="No" Name="devplatform_sys" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="devplatform.pdm"/>
+		<Model Expanded="Yes" ID="{A4974363-792F-4773-B126-728AA2F7FA58}" Loaded="No" Name="devplatform_form" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="devplatform_form.pdm"/>
+		<Model Expanded="Yes" ID="{2B4C6D79-EF78-4E57-8F65-CEAD723E6F37}" Name="devplatform_wf" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="devplatform_wf.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>

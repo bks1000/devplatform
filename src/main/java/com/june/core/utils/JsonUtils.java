@@ -114,6 +114,12 @@ public class JsonUtils {
         return  jsonlist;
     }
 
+    public static String list2Json(List<Map<String,Object>> lst) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonlist = mapper.writeValueAsString(lst);
+        return  jsonlist;
+    }
+
     /**
      * JSON序列化
      * @param obj

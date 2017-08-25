@@ -44,7 +44,7 @@ public final class ReflectUtil {
   @SuppressWarnings({ "deprecation" })
 public static Class classForName(String name) {
     try {
-      return ClassUtils.forName(name);
+      return ClassUtils.forName(name,ClassUtils.getDefaultClassLoader());
     } catch (ClassNotFoundException e) {
       throw new IllegalStateException("Class not found." + name, e);
     }

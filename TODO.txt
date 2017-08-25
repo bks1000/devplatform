@@ -22,3 +22,7 @@ FineReport报表整合代码	        整合FineReport的代码
 代码生成器源代码	            开放代码生成器的所有底层代码
 在线设计器源代码	            Ibm Log Elixir设计器源代码
 日程展示控件代码	            Ibm Log Elixir 日程展示控件代码
+
+
+
+先实现功能，以后考虑采用angularjs重构

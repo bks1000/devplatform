@@ -35,4 +35,10 @@ public interface IMenuDao {
 	 * @return
 	 */
 	public List<Menu> getChildList(String parentId);
+
+	/**
+	 * 获取菜单树
+	 * @return
+	 */
+	public List<Map<String, Object>> getMenuTree();
 }

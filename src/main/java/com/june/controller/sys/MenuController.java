@@ -5,6 +5,7 @@
  package com.june.controller.sys;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.june.core.utils.EasyTreeData;
 import com.june.core.utils.JsonUtils;
 import com.june.core.utils.PageUtils;
 import com.june.dto.sys.Menu;
@@ -48,6 +49,14 @@ public class MenuController {
 		}
 		mav.addObject("data", menus);
 		return mav;
+	}
+
+	@RequestMapping("/tree")
+	@ResponseBody
+	public String getMenus() throws JsonProcessingException {
+		List<Map<String,Object>> lst = service.getMenuTree();
+		EasyTreeData data = new EasyTreeData();
+		return data.makeTreeData(lst,"0");
 	}
 	
 	@RequestMapping("/add")

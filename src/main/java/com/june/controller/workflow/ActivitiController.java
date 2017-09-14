@@ -83,7 +83,7 @@ public class ActivitiController {
     protected static Map<String, ProcessDefinition> PROCESS_DEFINITION_CACHE = new HashMap<String, ProcessDefinition>();
 
     @Autowired
-    ProcessEngineFactoryBean processEngine;
+    ProcessEngineFactoryBean processEngineFactory;
 
     @Autowired
     ProcessEngineConfiguration processEngineConfiguration;
@@ -226,7 +226,7 @@ public class ActivitiController {
 //    Context.setProcessEngineConfiguration(defaultProcessEngine.getProcessEngineConfiguration());
 
         // 使用spring注入引擎请使用下面的这行代码
-        processEngineConfiguration = processEngine.getProcessEngineConfiguration();
+        processEngineConfiguration = processEngineFactory.getProcessEngineConfiguration();
         Context.setProcessEngineConfiguration((ProcessEngineConfigurationImpl) processEngineConfiguration);
 
         ProcessDiagramGenerator diagramGenerator = processEngineConfiguration.getProcessDiagramGenerator();

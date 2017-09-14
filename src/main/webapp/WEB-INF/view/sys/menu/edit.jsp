@@ -15,7 +15,6 @@
                 }*/
                 console.log($('#ff').form('getData',true));
                 var param = $('#ff').form('getData',true);
-                param.rs = "on"==param.rs?1:0;
                 $.post('${ctx}/menu/save',param,function (data) {
                     parent.OP.closeDialog();
                 })
@@ -25,7 +24,7 @@
             });
 
             if (dto!=null && dto!=undefined && dto!=0){
-                $('#ff').form('setData',dto,"ff");
+                $('#ff').form('setData',dto);
             }
         });
     </script>

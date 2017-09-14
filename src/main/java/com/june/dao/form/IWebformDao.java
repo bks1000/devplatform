@@ -16,6 +16,13 @@ public interface IWebformDao {
 	
 			
 	public Webform getWebformById(String Wid);
+
+	/**
+	 * 根据formkey获取表单html
+	 * @param fromkey
+	 * @return
+	 */
+	public Webform getWebformByFormkey(String fromkey);
 	
 	
 	public void saveWebform(Webform dto);
@@ -29,4 +36,20 @@ public interface IWebformDao {
 	 * @return
 	 */
 	public List<Map<String,Object>> getFormField(String boid);
+
+	/**
+	 * 保存业务数据到业务表
+	 * @param params
+	 * @return 返回业务数据ID，用于启动流程
+	 */
+	public String saveBusinessData(Map<String,Object> params);
+
+	/**
+	 * 保存流程实例ID到业务表
+	 * @param boid 查找业务表名用
+	 * @param id 业务表主键
+	 * @param instanceId 流程实例ID
+	 * @return
+	 */
+	public boolean saveBusinessInst(String boid,String id,String instanceId);
 }

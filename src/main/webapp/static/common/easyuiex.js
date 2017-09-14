@@ -34,15 +34,18 @@ $.extend($.fn.form.methods, {
      * @param jq
      * @param fname form id
      */
-    ghostSerialize:function (jq, fname) {
+    ghostSerialize:function (jq) {
         var formArray = jq.serializeArray();
-        var radio = $('input[type=radio],input[type=checkbox]', $("#"+fname));
+        var radio = $('input[type=radio],input[type=checkbox]', $(jq.selector));
         var temp = {};
         $.each(radio, function () {
             if (!temp.hasOwnProperty(this.name)) {
                 if ($("input[name='" + this.name + "']:checked").length == 0) {
-                    temp[this.name] = "";
-                    formArray.push({name: this.name, value: ""});
+                    temp[this.name] = "false";
+                    formArray.push({name: this.name, value: "0",type:"checkbox"});
+                }else {
+                    temp[this.name] = "true";
+                    formArray.push({name: this.name, value: "1",type:"checkbox"});
                 }
             }
         });
@@ -53,15 +56,17 @@ $.extend($.fn.form.methods, {
      * getData 获取数据接口
      * @param jq
      * @param params
+     * @param ff formID
      * @returns {{}}
      */
     getData: function(jq, params){
-        var formArray = jq.serializeArray();
+        //var formArray = jq.serializeArray();
+        var formArray = this.ghostSerialize(jq);
         var oRet = {};
         for (var i in formArray) {
             if (typeof(oRet[formArray[i].name]) == 'undefined') {
                 if (params) {
-                    oRet[formArray[i].name] = (formArray[i].value == "true" || formArray[i].value == "false") ? formArray[i].value == "true" : formArray[i].value;
+                    oRet[formArray[i].name] = (formArray[i].value == "true"||formArray[i].value == "false") ? (formArray[i].value == "true" && 1): formArray[i].value;
                 }
                 else {
                     oRet[formArray[i].name] = formArray[i].value;
@@ -69,7 +74,7 @@ $.extend($.fn.form.methods, {
             }
             else {
                 if (params) {
-                    oRet[formArray[i].name] = (formArray[i].value == "true" || formArray[i].value == "false") ? formArray[i].value == "true" : formArray[i].value;
+                    oRet[formArray[i].name] = (formArray[i].value == "true" || formArray[i].value == "false") ? (formArray[i].value == "true" && 1) : formArray[i].value;
                 }
                 else {
                     oRet[formArray[i].name] += "," + formArray[i].value;
@@ -84,16 +89,16 @@ $.extend($.fn.form.methods, {
      * @param params Json数据对象
      * @param fid    from id
      */
-    setData: function(jq, params ,fid){
-        var formArray = this.ghostSerialize(jq,fid);//jq.serializeArray();
+    setData: function(jq, params ){
+        var formArray = this.ghostSerialize(jq);//jq.serializeArray();
         for (var i in formArray) {
             var iid = formArray[i].name;
-            if (iid == "rs"){
+            /*if (iid == "rs"){
                 //$('#'+formArray[i].name).val(params[iid]=="1"?"on":"off");
-                $("input[name='rs']").each(function(){
-                    this.checked="1"?true:false;
-                });
-                continue;
+                $("input[name='rs']")[0].checked=params[iid]=="1";
+            }*/
+            if(formArray[i].type=="checkbox"){
+                $("input[name='"+iid+"']")[0].checked=params[iid]=="1";
             }
             $('#'+formArray[i].name).val(params[iid]);
         }

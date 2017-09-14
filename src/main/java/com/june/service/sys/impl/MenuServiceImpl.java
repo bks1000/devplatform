@@ -44,4 +44,9 @@ public class MenuServiceImpl extends BaseService implements IMenuService{
 	}
 
 	public List<Menu> getChildList(String parentId){return dao.getChildList(parentId);}
+
+	@Override
+	public List<Map<String, Object>> getMenuTree() {
+		return dao.getMenuTree();
+	}
 }

@@ -55,4 +55,10 @@ public class MenuDaoImpl extends BaseDao implements IMenuDao{
 		return this.find("from Menu m where m.parentid=? order by m.idx",parentId);
 	}
 
+	@Override
+	public List<Map<String, Object>> getMenuTree() {
+		String sql="SELECT id,name as text,parentid as pid FROM menu WHERE rs=1";
+		return jdbcTemplate.queryForList(sql);
+	}
+
 }

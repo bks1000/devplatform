@@ -17,6 +17,9 @@
 	<link href="${ctx }/static/jui/jquery-ui.min.css" type="text/css">
     <script type="text/javascript">
     $(function() {
+        // 初始化对话框
+        $("#createModelTemplate").dialog();
+        $("#createModelTemplate").dialog("close");//关闭对话框
     	$('#create').button({
     		icons: {
     			primary: 'ui-icon-plus'
@@ -48,7 +51,7 @@
 		}
     </script>
 </head>
-<body>
+<body style="width:80%">
 	<c:if test="${not empty message}">
 	<div class="ui-widget">
 			<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em;"> 

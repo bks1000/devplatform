@@ -26,3 +26,7 @@ FineReport报表整合代码	        整合FineReport的代码
 
 
 先实现功能，以后考虑采用angularjs重构
+
+工作流引擎Activiti使用总结
+#使用引擎提供的Form还是自定义业务Form
+http://blog.csdn.net/ocean20/article/details/16961679

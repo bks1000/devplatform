@@ -5,16 +5,18 @@
 <head>
     <jsp:include page="../base/jscss.jsp"/>
     <jsp:include page="../base/global.jsp"/>
+
     <script>
-        /*var notLogon = ${empty user};
-        if (notLogon) {
-            location.href = '${ctx}/login?error=nologon';
-        }*/
+        /*var notLogon = $_{empty user};
+         if (notLogon) {
+         location.href = '$_{ctx}/login?error=nologon';
+         }*/
+
     </script>
 
     <title>流程列表</title>
-    <script src="${ctx }/static/jui/jquery-ui.min.js" type="text/javascript"></script>
-    <link href="${ctx }/static/jui/jquery-ui.min.css" type="text/css">
+    <!--<script src="${ctx }/static/jui/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="${ctx }/static/jui/jquery-ui.min.css" type="text/css">-->
     <script type="text/javascript">
         $(function() {
             $('#redeploy').button({
@@ -43,6 +45,7 @@
 </c:if>
 <div style="text-align: right;padding: 2px 1em 2px">
     <div id="message" class="info" style="display:inline;"><b>提示：</b>点击xml或者png链接可以查看具体内容！</div>
+    <a id="create" href="${ctx}/workflow/model/list">创建流程</a>
     <a id='deploy' href='#'>部署流程</a>
     <a id='redeploy' href='${ctx }/workflow/redeploy/all' style="display:none">重新部署流程</a>
 </div>
@@ -98,6 +101,7 @@
     </c:forEach>
     </tbody>
 </table>
+
 <tags:pagination page="${page}" paginationSize="${page.pageSize}"/>
 </body>
 </html>

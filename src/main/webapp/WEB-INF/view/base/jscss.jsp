@@ -9,6 +9,7 @@
 <link rel="Stylesheet" type="text/css" href="${ctx }/static/jquery-easyui/themes/icon.css" />
 <!--easyui扩展-->
 <script type="text/javascript" src="${ctx}/static/common/easyuiex.js" charset="utf-8"></script>
+<link rel="Stylesheet" type="text/css" href="${ctx}/static/common/easyuiex.css" />
 <!--bootstrap 3-->
 <link rel="Stylesheet" type="text/css" href="${ctx }/static/bootstrap/css/bootstrap.css" />
 <link rel="Stylesheet" type="text/css" href="${ctx }/static/bootstrap/css/bootstrap-theme.min.css" />

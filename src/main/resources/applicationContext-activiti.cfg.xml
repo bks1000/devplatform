@@ -36,6 +36,7 @@
     <bean id="processEngineFactory" class="org.activiti.spring.ProcessEngineFactoryBean">
         <property name="processEngineConfiguration" ref="processEngineConfiguration"/>
     </bean>
+
     <!--配置流程7大对象-->
     <bean id="repositoryService" factory-bean="processEngineFactory" factory-method="getRepositoryService"/>
     <bean id="runtimeService" factory-bean="processEngineFactory" factory-method="getRuntimeService"/>
@@ -48,4 +49,7 @@
     <!-- 集成REST服务需要的bean -->
     <bean id="restResponseFactory" class="org.activiti.rest.service.api.RestResponseFactory" />
     <bean id="contentTypeResolver" class="org.activiti.rest.common.application.DefaultContentTypeResolver" />
+
+    <!-- 依赖jar包使用 -->
+    <bean id="processEngine" factory-bean="processEngineConfiguration" factory-method="buildProcessEngine" />
 </beans>

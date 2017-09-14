@@ -16,9 +16,9 @@
         <div data-options="region:'north',height:51,href:'${ctx}/navbar'" style="height:51px;">
         </div>
         <div data-options="region:'south',split:false" style="height:20px;">
-            develop platform
+            develop platform 欢迎：${nickname} <a href="${ctx}/logout">退出</a>
         </div>
-        <div data-options="region:'west',split:true" title="" style="width:260px;">
+        <div data-options="region:'west',split:true,collapsible:false" title="" style="width:260px;">
             <!--<ul id="menutree"></ul>-->
             <div class="panel-header" style="width: 100%">
                 <div class="panel-title"></div>
@@ -26,8 +26,8 @@
             </div>
             <div id="acc" class="easyui-accordion" data-options="fit:true,border:false,nimate:true,lines:true"></div>
         </div>
-        <div data-options="region:'center',border:false,fit:true" id="tt" class="easyui-tabs">
-
+        <div data-options="region:'center'">
+            <div  id="tt" class="easyui-tabs" data-options="border:false,fit:true,plain:true"></div>
         </div>
     </div>
     <div id="dd" style="overflow-x:hidden;"></div>

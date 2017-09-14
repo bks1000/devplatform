@@ -203,7 +203,7 @@ public class FormKeyController {
      */
     @RequestMapping(value = "task/list")
     public ModelAndView taskList(Model model, HttpServletRequest request) {
-        ModelAndView mav = new ModelAndView("/form/formkey/formkey-task-list");
+        ModelAndView mav = new ModelAndView("/workflow/formkey-task-list");
         User user = UserUtil.getUserFromSession(request.getSession());
         Page2<Task> page = new Page2<Task>(PageUtils2.PAGE_SIZE);
         int[] pageParams = PageUtils2.init(page, request);
@@ -212,7 +212,7 @@ public class FormKeyController {
          * 这里为了演示区分开自定义表单的请假流程，值读取leave-formkey
          */
 
-        // 已经签收的或者直接分配到当前人的任务
+        /*// 已经签收的或者直接分配到当前人的任务
         String asigneeSql = "select distinct RES.* from ACT_RU_TASK RES inner join ACT_RE_PROCDEF D on RES.PROC_DEF_ID_ = D.ID_ WHERE RES.ASSIGNEE_ = #{userId}"
                 + " and D.KEY_ = #{processDefinitionKey} and RES.SUSPENSION_STATE_ = #{suspensionState}";
 
@@ -223,7 +223,15 @@ public class FormKeyController {
                 + " and RES1.SUSPENSION_STATE_ = #{suspensionState}";
         String sql = asigneeSql + " union all " + needClaimSql;
         NativeTaskQuery query = taskService.createNativeTaskQuery().sql(sql)
-                .parameter("processDefinitionKey", "leave-formkey").parameter("suspensionState", SuspensionState.ACTIVE.getStateCode())
+                .parameter("processDefinitionKey", "qjprocess").parameter("suspensionState", SuspensionState.ACTIVE.getStateCode())
+                .parameter("userId", user.getId());*/
+        String sql = "select distinct RES.* from ACT_RU_TASK RES inner join ACT_RE_PROCDEF D on RES.PROC_DEF_ID_ = D.ID_ WHERE RES.ASSIGNEE_ = #{userId} " +
+                " and RES.SUSPENSION_STATE_ = #{suspensionState} union ALL select distinct RES1.* from ACT_RU_TASK RES1 inner join ACT_RU_IDENTITYLINK I on I.TASK_ID_ = RES1.ID_ inner join ACT_RE_PROCDEF D1 on RES1.PROC_DEF_ID_ = D1.ID_ WHERE " +
+                "RES1.ASSIGNEE_ is null and I.TYPE_ = 'candidate ' " +
+                "and ( I.USER_ID_ = #{userId} or I.GROUP_ID_ IN (select g.GROUP_ID_ from ACT_ID_MEMBERSHIP g where g.USER_ID_ = #{userId} ) )" +
+                " and RES1.SUSPENSION_STATE_ = #{suspensionState}";
+        NativeTaskQuery query = taskService.createNativeTaskQuery().sql(sql)
+                .parameter("suspensionState", SuspensionState.ACTIVE.getStateCode())
                 .parameter("userId", user.getId());
         List<Task> tasks = query.listPage(pageParams[0], pageParams[1]);
 
